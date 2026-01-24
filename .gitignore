@@ -1,0 +1,10 @@
+*.pyc
+.agents/
+.cursor/
+.claude/
+.gemini/
+.opencode/
+.qoder/
+.trae/
+
+doc/
