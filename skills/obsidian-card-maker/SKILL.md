@@ -17,21 +17,18 @@ description: 将杂乱文本重组为高质量的 Obsidian 原子记忆卡片。
 
 ```markdown
 ---
-tags: [ {{generated_tags}} ]
-created: {{date}}
+memory-card: true
 category: {{category}}
-status: permanent
 ---
 
 > [!summary]+ 概要
 > {{abstract_summary}}
 
-> [!question]- 核心问题
-> - {{core_question_for_recall_1}}
-> - {{core_question_for_recall_2}} (如果有多个)
+> [!question]- {{core_question_for_recall}} （核心问题，一个或多个）
+> {{answer_to_the_question}}
 
-# 来源
-- {{source_links_if_any}}
+# 参考
+- {{source_links_if_any}} （与内容相关的外部网站链接/github仓库地址……如未提供则不记录）
 
 # 正文
 {{restructured_content_with_headings}}
@@ -44,11 +41,11 @@ status: permanent
 1. **分析输入**: 理解用户提供的文本内容，识别核心主题、关键细节和潜在的知识关联。
 2. **提取标题**: 生成一个精准的文件名（不含非法字符，如 `认知失调 (Cognitive Dissonance).md`）。
 3. **编写内容**:
-    - **Frontmatter**: 自动生成 3-5 个相关标签，推断分类（如 AI, 心理学），填入当前日期（格式 YYYY-MM-DD）。
+    - **Frontmatter**: 自动生成 3-5 个相关标签，推断分类（如 AI, 心理学）。
     - **概要**: 用一句话高度概括核心思想。
     - **问题**: 提炼 1-3 个能通过 active recall 唤起整篇记忆的核心引导问题。如果涉及多个知识点，请使用无序列表列出。
     - **正文**: 重新排版长文，使用 H1 (`#`) 和 H2 (`##`) 构建清晰的层级。保留所有重要细节。对于代码块，确保标记正确的语言。
-    - **关联**: 基于常识推测可能相关的概念链接。
+    - **关联**: 基于知识库已有的“记忆卡片”进行关联（memory-card: true），不关联临时笔记。
 4. **保存文件**:
     - 确定保存路径。如果用户未指定路径，且你不知道 Obsidian 仓库位置，请先**询问用户**：“请告诉我您的 Obsidian 仓库根目录路径（或想保存的具体文件夹路径）？”
     - 如果已知路径，直接使用 `write_file` 保存。
