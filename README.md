@@ -12,3 +12,15 @@
 ```bash
 npx skills add https://github.com/JohnXi029/johnxi-skills.git --skill skill-lens
 ```
+
+
+## Obsidian 相关技能
+
+### [skill-obsidian-card-maker：记忆卡片制作器](skills/obsidian-card-maker/)
+
+将杂乱文本重组为高质量的 Obsidian 原子记忆卡片。支持自动摘要、提问生成及格式化排版。
+
+推荐安装方式：
+```bash
+npx skills add https://github.com/JohnXi029/johnxi-skills.git --skill obsidian-card-maker
+```
